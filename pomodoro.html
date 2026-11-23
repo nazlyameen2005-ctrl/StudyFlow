@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pomodoro Timer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+ 
+
+ <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="dashboard.html">
+                    <span class="brand-mark"><img class="logo" src="images/logo backgroud removed.gif"></span>
+                    <span>RUHUNA<small>Study Flow</small></span>
+                </a>
+
+		
+
+                <nav class="main-nav">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="features.html">Features</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                
+            </div>
+    </header>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(255, 255, 255);
+            color: rgb(170, 165, 10);
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .timer {
+            display: inline-block;
+            padding: 10px;
+            width: 600px;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 25rem;
+            height: 25rem;
+            border-radius: 50%;
+            text-align: center;
+            margin: auto 0;
+            margin-bottom: 2rem;
+           
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 20px auto;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+
+
+        }
+
+        .pomodoro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin: 4px 0;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #f0b3c2;
+            margin: 100px;
+             
+        }
+
+        .timer {
+            font-size: 5rem;
+            margin: 20px auto;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            background-color: rgb(165, 42, 89);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        .button.active, .button:hover {
+            background-color: rgb(104, 15, 76);
+            
+        }
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+    <body>
+
+        <div id="message">Please select a timer before starting.</div>
+            <div class="container">
+                <div class="timer">
+                    <h1>Pomodoro Timer</h1>
+
+                    <div class="button-container">
+                        <button class="button" id="pomodoro-session">Pomodoro</button>
+                        <button class="button" id="shortbrk">Short</button>
+                        <button class="button" id="longbrk">Long</button>
+                    </div>
+
+                    <main>
+                        <div class="pomodoro">
+
+                            <div id="pomodorotimer" class="timerdisplay" data-duration="25.00">
+                                <h1 class="time">25.00</h1>
+                            </div>
+
+                            <div id="shorttime" class="timerdisplay" data-duration="5.00">
+                                <h1 class="time">5.00</h1>
+                            </div>
+
+                            <div id="longtime" class="timerdisplay" data-duration="10.00">
+                                <h1 class="time">10.00</h1>
+                            </div>
+
+
+                        </div>
+                    </main>
+
+                    <div class="buttons">
+                        <button id="start">START</button>
+                        <button id="stop">STOP</button>
+                    </div>
+                </div>
+            </div>
+        <footer class="site-footer">
+                <div class="container footer-inner">
+                    <a class="brand footer-brand" href="dashboard.html">
+                        <span class="brand-mark"><img class="logo" src="images/logo backgroud removed.gif"></span>
+                        <span>RUHUNA <small>Study Flow</small></span>
+                    </a>
+                    <p> Group 8 - University of Ruhuna</p>
+                    <p> 2026 Ruhuna Study flow</p>
+                </div>
+         </footer>
+    </body>       
+
+</html>
