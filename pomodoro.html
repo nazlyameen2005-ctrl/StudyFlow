@@ -119,6 +119,10 @@
             font-weight: bold;
         }
 
+        .time {
+            font-size: 100%;
+        }
+
         #start, #stop {
             background-color:  #4e0f0f;
             color: #ffe8ee;
@@ -204,6 +208,82 @@
                 </div>
             </div>
         </div>
+    <script>
+
+           let pomodoro = document.getElementById("pomodorotimer");
+           let short = document.getElementById("shorttime");
+           let long = document.getElementById("longtime"); 
+           let timers = document.querySelectorAll(".timerdisplay");
+           let session = document.getElementById("pomodoro-session");
+           let shortbreak = document.getElementById("shortbrk");
+           let longbreak = document.getElementById("longbrk");
+           let stopbtn = document.getElementById("stop");
+           let startbtn = document.getElementById("start");
+           let button = document.getElementById(".button");
+        
+           let currentTimer = null;
+           let myIntervel = null;
+
+           // The defult timer
+
+           function showDefultTimer() {
+                pomodoro.style.display = "block"
+                short.style.display = "none"
+                long.style.display = "none"
+
+           }
+
+           showDefultTimer()
+
+           function hideAll() {
+                timers.forEach((timer)=> {
+                    timer.style.display = "none"
+            })
+           }
+
+           session.addEventListener("click", () => {
+                hideAll()
+
+                pomodoro.style.display = "block"
+
+                session.classList.add("active")
+                shortbreak.classList.remove("active")
+                longbreak.classList.remove("active")
+                
+           })
+
+            shortbreak.addEventListener("click", () => {
+                hideAll()
+
+                short.style.display = "block"
+
+                session.classList.remove("active")
+                shortbreak.classList.add("active")
+                longbreak.classList.remove("active")
+                
+           })
+
+            longbreak.addEventListener("click", () => {
+                hideAll()
+
+                long.style.display = "block"
+
+                session.classList.remove("active")
+                shortbreak.classList.remove("active")
+                longbreak.classList.add("active")
+                
+           })
+
+           
+
+
+
+
+           
+
+
+
+    </script>       
 
         
 
