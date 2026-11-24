@@ -282,7 +282,7 @@
         }
 
         /*content in task manager*/
-        
+
         .content-task ul{
             list-style: none;
             display: flex;
@@ -326,13 +326,137 @@
             font-style: italic;
         }
 
+        /*section_4 our values*/
 
-        
-        
-        
+        .value-section{
+            width: 100%;
+            padding: 40px 20px;
+            background-color: lightcoral;
+        }
 
+         /*title*/   
+        .container-value h2{
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        /*grids*/
+        .value-grid{
+            text-align: center;
+        }
+
+        .value-grid ul{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top:10px;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .simple,
+        .focus,
+        .free,
+        .student {
+            font-size: 20px;
+            font-weight: 400px;
+            padding: 8px 20px;
+            border-radius: 800px;
+            background-color: #fff;
+            border: 2px solid maroon;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .dot{
+            background: none;
+            border:none;
+            padding: 0;
+            font-size: 50px;
+        }
+
+        /*section_5_team members*/
+        
+        .team-section{
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .container-team h2{
+            font-size: 35px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .container-team h3{
+            font-size: 30px;
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .container-team p{
+            font-size: 25px;
+            font-weight: 500;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 45px;
+        }
+
+        /*grids*/
+
+        .member-grid{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .login,
+        .dashboard,
+        .about,
+        .contact,
+        .feature{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width:200px;
+            border-radius: 20px;
+            border: 2px solid maroon;
+            background-color: #ccc;
+            padding: 20px 40px;
+            text-align: center;
+        }
+        
+        .photo{
+            width:80px;
+            height:80px;
+            object-fit: cover;
+            margin-bottom: 14px;
+        }
        
+        .name{
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
 
+        .member-grid .role {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
 
     </style>
 
@@ -505,8 +629,11 @@
                 <div class="value-grid">
                         <ul>
                             <li class="simple">Simple</li>
+                            <li class="dot">.</li>
                             <li class="focus">Focused</li>
+                            <li class="dot">.</li>
                             <li class="student">Student-First</li>
+                            <li class="dot">.</li>
                             <li class="free">Free Forever</li>
                         </ul>
                 </div>
@@ -516,42 +643,44 @@
 <!--section_5_team-->
 
  <section class="team-section">
-            <div class="cintainer-team">
+            <div class="container-team">
                 <h2>who we are</h2>
                 <h3>Built By Students, For students</h3>
                 <p>Meet the group 8 of University of Ruhuna project team behind StudyFlow</p>
 
                 <!--member-grids-->
                 <div class="member-grid">
+                          
                             <div class="login">
-                                <img src="images/user-male.png" alt="login">
-                                <h4>M.A.N.Ahamed <br> SC/CS/2025/15040</h4>
-                                <p>Login Page<br>&<br>Task Manager</p>
+                                <img src="images/user-male.png" alt="login" class="photo">
+                                <h4 class="name">M.A.N.Ahamed <br> SC/CS/2025/15040</h4>
+                                <p class="role">Login Page<br>&<br>Task Manager</p>
                             </div>
 
                             <div class="dashboard">
-                                <img src="images/user-female.png" alt="dashboard">
-                                <h4>R.M.S.P.A.Bandara <br> SC/CS/2025/14964</h4>
-                                <p>Dashboard <br>&<br>Exam Countdown</p>
+                                <img src="images/user-female.png" alt="dashboard" class="photo">
+                                <h4  class="name">R.M.S.P.A.Bandara <br> SC/CS/2025/14964</h4>
+                                <p class="role">Dashboard <br>&<br>Exam Countdown</p>
                             </div>
 
                              <div class="about">
-                                <img src="images/user-female.png" alt="about">
-                                <h4>M.A.D.O.Pramodya <br> SC/CS/2025/14982</h4>
-                                <p>About Page <br>&<br>Study Timetable</p>
+                                <img src="images/user-female.png" alt="about" class="photo">
+                                <h4 class="name">M.A.D.O.Pramodya <br> SC/CS/2025/14982</h4>
+                                <p class="role">About Page <br>&<br>Study Timetable</p>
                             </div>
 
                              <div class="contact">
-                                <img src="images/user-male.png" alt="contact">
-                                <h4>D.M.S.D.Bandara <br> SC/CS/2025/15021</h4>
-                                <p>Contact page<br>&<br>Task Manager</p>
+                                <img src="images/user-male.png" alt="contact" class="photo">
+                                <h4 class="name">D.M.S.D.Bandara <br> SC/CS/2025/15021</h4>
+                                <p class="role">Contact page<br>&<br>Task Manager</p>
                             </div>
 
                              <div class="feature">
-                                <img src="images/user-female.png" alt="feature">
-                                <h4>H.G.S.Ithwarangi <br> SC/CS/2025/15003</h4>
-                                <p>Features Page <br>&<br>Pomodoro Timer</p>
+                                <img src="images/user-female.png" alt="feature" class="photo">
+                                <h4 class="name">H.G.S.Ithwarangi <br> SC/CS/2025/15003</h4>
+                                <p class="role">Features Page <br>&<br>Pomodoro Timer</p>
                             </div>
+
                 </div>
             </div>
  </section>
