@@ -107,6 +107,7 @@
             margin: 5px;
             cursor: pointer;
         }
+    
         
         .button.active, .button:hover {
             background-color:  #846b1c;
@@ -149,6 +150,7 @@
 
 
     </style>
+</head>
 
      <header class="site-header">
             <div class="container header-inner">
@@ -158,8 +160,8 @@
                 </a>
 
 		
-
-                <nav class="main-nav">
+                
+            <nav class="main-nav">
                     <a href="dashboard.html">Dashboard</a>
                     <a href="features.html">Features</a>
                     <a href="about.html">About</a>
@@ -221,7 +223,7 @@
            let startbtn = document.getElementById("start");
            let button = document.getElementById(".button");
         
-           let currentTimer = null;
+           let currentTimer = pomodoro; //// set default pomodoro so "Start" works on load
            let myIntervel = null;
 
            // The defult timer
@@ -249,6 +251,8 @@
                 session.classList.add("active")
                 shortbreak.classList.remove("active")
                 longbreak.classList.remove("active")
+
+                currentTimer = pomodoro;
                 
            })
 
@@ -260,6 +264,8 @@
                 session.classList.remove("active")
                 shortbreak.classList.add("active")
                 longbreak.classList.remove("active")
+
+                currentTimer = short;
                 
            })
 
@@ -271,25 +277,60 @@
                 session.classList.remove("active")
                 shortbreak.classList.remove("active")
                 longbreak.classList.add("active")
+
+                currentTimer = long;
                 
            })
 
-           
+           //start timer when click
 
+           function startTimer(timerdisplay){
+                if(myIntervel) {
+                    clearInterval(myIntervel)
 
+                }
 
+                timerDuration = timerdisplay.getAttribute("data-duration").split(":")[0]
 
-           
+                let durationInMilliseconds = timerDuration * 60 * 1000
+                let endTimestamp = Date.now() + durationInMilliseconds
 
+                myIntervel = setInterval(() => {
+                    const timeRemaining = new Date(endTimestamp - Date.now())
+                    
+                    if(timeRemaining <= 0) {
+                        clearInterval(myIntervel)
+                        timerdisplay.textContent = "00:00"
 
+                        const alarm = new Audio("https://www.freespecialeffects.co.uk/soundfx/scifi/electronic.wav")
+                        alarm.play()
+                    
+                    } else {
+                        const minutes = Math.floor(timeRemaining/60000)
+                        const seconds = ((timeRemaining % 60000) / 1000).toFixed(0)
+                        const formattedTime = `${minutes}:${seconds
+                            .toString()
+                            .padStart(2,"0")}`;
+                        timerdisplay.textContent = formattedTime   
+                    }
+                }, 1000)
+            }
+                
 
+                startbtn.addEventListener("click", ()=>{
+                    if(currentTimer) {
+                        startTimer(currentTimer)
+                        
+                    }
+                })
+
+                stopbtn.addEventListener("click", ()=>{
+                        if(currentTimer) {
+                            clearInterval(myIntervel)
+                        }
+                })
     </script>       
 
-        
-
-
-
-    
         <footer class="site-footer">
                 <div class="container footer-inner">
                     <a class="brand footer-brand" href="dashboard.html">
@@ -299,7 +340,7 @@
                     <p> Group 8 - University of Ruhuna</p>
                     <p> 2026 Ruhuna Study flow</p>
                 </div>
-         </footer>
+        </footer>
     </body>       
 
 </html>
